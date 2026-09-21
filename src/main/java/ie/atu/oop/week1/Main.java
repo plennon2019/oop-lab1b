@@ -6,5 +6,29 @@ public class Main {
     public static void main(String[] args)
     {
         System.out.println("Hello OOP");
+
+        Book firstBook = new Book();
+
+        firstBook.title = "Dune";
+        firstBook.author = "Frank";
+        firstBook.pageCount = 412;
+
+        firstBook.displayDetails();
+        firstBook.borrowBook();
+        System.out.println("\n");
+        firstBook.displayDetails();
+        System.out.println("\n");
+
+        Book secondBook = new Book();
+        secondBook.title = "Star Trek";
+        secondBook.author = "Dave";
+        secondBook.pageCount = 300;
+        secondBook.available = true;
+
+        secondBook.displayDetails();
+
+
+
     }
+
 }
