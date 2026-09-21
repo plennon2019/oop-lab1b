@@ -16,5 +16,18 @@ public class Book
         System.out.println("Is book available? " + available);
     }
 
+    public void borrowBook()
+    {
+        if (available)
+        {
+           available = false;
+            System.out.println(title +"borrowed successfully");
+        }
+        else
+        {
+            System.out.println(title +"not available");
+        }
+    }
+
 }
 
