@@ -5,29 +5,22 @@ package ie.atu.oop.week1;
 public class Main {
     public static void main(String[] args)
     {
-        System.out.println("Hello OOP");
+        try {
+            Book myBook = new Book("Dune", "Frank", 10);
+            LibraryService service = new LibraryService();
+            System.out.println("Creating a new book");
+            System.out.println(myBook.getStatus());
+            myBook.borrowBook();
+            System.out.println(myBook.getStatus());
+            myBook.returnBook();
+            System.out.println(myBook.getStatus());
 
-        Book firstBook = new Book();
-
-        firstBook.title = "Dune";
-        firstBook.author = "Frank";
-        firstBook.pageCount = 412;
-
-        firstBook.displayDetails();
-        firstBook.borrowBook();
-        System.out.println("\n");
-        firstBook.displayDetails();
-        System.out.println("\n");
-
-        Book secondBook = new Book();
-        secondBook.title = "Star Trek";
-        secondBook.author = "Dave";
-        secondBook.pageCount = 300;
-        secondBook.available = true;
-
-        secondBook.displayDetails();
-
-
+            service.loanBook(myBook,14);
+            System.out.println(myBook.getStatus());
+        } catch (IllegalArgumentException ex)
+        {
+            System.out.println(ex.getMessage());
+        }
 
     }
 
